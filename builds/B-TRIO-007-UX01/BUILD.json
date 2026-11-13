@@ -1,0 +1,649 @@
+{
+  "schemaVersion": 1,
+  "id": "B-TRIO-007-UX01",
+  "mode": "full",
+  "seed": "SEED-001",
+  "contractVersion": "C1-ESM1",
+  "artworkId": "lotus-and-carp",
+  "assetVersion": "DIGITAL-LAYERS-2",
+  "contentVersion": "B-TRIO-004-DIGITAL-LAYERS-2",
+  "artworks": [
+    {
+      "artworkId": "lotus-and-carp",
+      "contentVersion": "B-TRIO-004-DIGITAL-LAYERS-2",
+      "assetVersion": "DIGITAL-LAYERS-2",
+      "files": [
+        "/assets/artworks/lotus-and-carp/overview.png",
+        "/assets/artworks/lotus-and-carp/thumbnail.png",
+        "/assets/artworks/lotus-and-carp/line.png",
+        "/assets/artworks/lotus-and-carp/trace.png",
+        "/assets/artworks/lotus-and-carp/carve.png",
+        "/assets/artworks/lotus-and-carp/plate-1.png",
+        "/assets/artworks/lotus-and-carp/plate-2.png",
+        "/assets/artworks/lotus-and-carp/paint-1-1.png",
+        "/assets/artworks/lotus-and-carp/paint-1-2.png",
+        "/assets/artworks/lotus-and-carp/paint-1-3.png",
+        "/assets/artworks/lotus-and-carp/paint-2-1.png",
+        "/assets/artworks/lotus-and-carp/paint-2-2.png",
+        "/assets/artworks/lotus-and-carp/paint-2-3.png"
+      ]
+    },
+    {
+      "artworkId": "peony-and-bird",
+      "contentVersion": "B-TRIO-004-DIGITAL-LAYERS-2",
+      "assetVersion": "DIGITAL-LAYERS-2",
+      "files": [
+        "/assets/artworks/peony-and-bird/overview.png",
+        "/assets/artworks/peony-and-bird/thumbnail.png",
+        "/assets/artworks/peony-and-bird/line.png",
+        "/assets/artworks/peony-and-bird/trace.png",
+        "/assets/artworks/peony-and-bird/carve.png",
+        "/assets/artworks/peony-and-bird/plate-1.png",
+        "/assets/artworks/peony-and-bird/plate-2.png",
+        "/assets/artworks/peony-and-bird/paint-1-1.png",
+        "/assets/artworks/peony-and-bird/paint-1-2.png",
+        "/assets/artworks/peony-and-bird/paint-1-3.png",
+        "/assets/artworks/peony-and-bird/paint-2-1.png",
+        "/assets/artworks/peony-and-bird/paint-2-2.png",
+        "/assets/artworks/peony-and-bird/paint-2-3.png"
+      ]
+    },
+    {
+      "artworkId": "spring-children",
+      "contentVersion": "B-TRIO-004-DIGITAL-LAYERS-2",
+      "assetVersion": "DIGITAL-LAYERS-2",
+      "files": [
+        "/assets/artworks/spring-children/overview.png",
+        "/assets/artworks/spring-children/thumbnail.png",
+        "/assets/artworks/spring-children/line.png",
+        "/assets/artworks/spring-children/trace.png",
+        "/assets/artworks/spring-children/carve.png",
+        "/assets/artworks/spring-children/plate-1.png",
+        "/assets/artworks/spring-children/plate-2.png",
+        "/assets/artworks/spring-children/paint-1-1.png",
+        "/assets/artworks/spring-children/paint-1-2.png",
+        "/assets/artworks/spring-children/paint-1-3.png",
+        "/assets/artworks/spring-children/paint-2-1.png",
+        "/assets/artworks/spring-children/paint-2-2.png",
+        "/assets/artworks/spring-children/paint-2-3.png"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "assets/artwork/carp-1.svg",
+      "bytes": 818,
+      "sha256": "742a04fe90aef71c4bde3dbd9339b96edddcf10389c03d8deb241515d192a7e9"
+    },
+    {
+      "path": "assets/artwork/carp-2.svg",
+      "bytes": 640,
+      "sha256": "f1b99978e1de2e3ae957b05df4de0b505f40b5dd802bf21ad5051866ccc3f7b4"
+    },
+    {
+      "path": "assets/artwork/carp-3.svg",
+      "bytes": 437,
+      "sha256": "7a23c4b31d5dd8c2278cd1d2bdee2827347308ceae39be45add40cf21ad410ec"
+    },
+    {
+      "path": "assets/artwork/carve.svg",
+      "bytes": 1513,
+      "sha256": "c80f8d1bef9e8f9563f9eaa89d2a37243144fac73b80e7ec6848c6581b3a610f"
+    },
+    {
+      "path": "assets/artwork/face-1.svg",
+      "bytes": 489,
+      "sha256": "2d4f14a489b38b498808ebfe877b9694af3f53fd09aa50f82504c3da4f35cb90"
+    },
+    {
+      "path": "assets/artwork/face-2.svg",
+      "bytes": 375,
+      "sha256": "d134362840a85b43bab0ff63df8f287cd04bd883f151ab1fb64dd36fd81597df"
+    },
+    {
+      "path": "assets/artwork/face-3.svg",
+      "bytes": 370,
+      "sha256": "158b577873da36d24723180b97eb027519e2e9393d8bce552d876134dcdaefc0"
+    },
+    {
+      "path": "assets/artwork/layer-check.json",
+      "bytes": 3038,
+      "sha256": "bbcb48bb792914499b9300f8e2cd92377994519f8066ee07cea157ca09080e17"
+    },
+    {
+      "path": "assets/artwork/line.svg",
+      "bytes": 103157,
+      "sha256": "f09a4d12b799d5003b3b59771ab05be9fd7d2d7aea2452ea615471912bd54b5a"
+    },
+    {
+      "path": "assets/artwork/manifest.json",
+      "bytes": 2305,
+      "sha256": "6f6d509b33a356c3768076f12780bbcb784e6ccf36a348e33c1c4d223a17c00a"
+    },
+    {
+      "path": "assets/artwork/overview.svg",
+      "bytes": 179720,
+      "sha256": "18a3192e10c4060943f4efb4cd9efe74635e6dc67b8b9e85172dbaf194ddd878"
+    },
+    {
+      "path": "assets/artwork/plate-1.svg",
+      "bytes": 19759,
+      "sha256": "55642686b9074748e9704741d1c08bf60215d2026e8e632243d4968018eb7bbc"
+    },
+    {
+      "path": "assets/artwork/plate-2.svg",
+      "bytes": 47187,
+      "sha256": "ebdb251afa488d43ef2a429819a6306ecf2bfa11f8933ae775f3fe42e328e09f"
+    },
+    {
+      "path": "assets/artwork/reference.svg",
+      "bytes": 179714,
+      "sha256": "04e6b7a19bc73990f966d3eaca541833fceda8ecffab349d02d284a2c6013411"
+    },
+    {
+      "path": "assets/artwork/thumbnail.svg",
+      "bytes": 179714,
+      "sha256": "3a085db4b4bb9d38f0169ae0e511a749f0ce129db038fc81eceb3a5885358353"
+    },
+    {
+      "path": "assets/artwork/trace.svg",
+      "bytes": 18203,
+      "sha256": "1a3cc83552483099443295aa85776d5999ef7bbc26e24669acf8fcfa995d47dd"
+    },
+    {
+      "path": "assets/artwork/叠合样张.png",
+      "bytes": 235650,
+      "sha256": "6a46152d8afa1f7b700904e963f2982d63ab4a4bd7a29746ee77cbb5603e9e08"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/art.json",
+      "bytes": 1444,
+      "sha256": "4d7f95cc1bbafce68e1998e3e9783a46f2fb50320404eaa4926f5766226c4e1e"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/carve.png",
+      "bytes": 1594084,
+      "sha256": "5126787219d25112c749228a83e5946a5f976e4b4ad72899bb49480f991bea35"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/layer-check.json",
+      "bytes": 3120,
+      "sha256": "239bfb38d242eeced79a673a029443075333ab92519dd6b5cb93d628d444b509"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/line.png",
+      "bytes": 3082559,
+      "sha256": "7f916e4973a8058da384e6d9d8709200dc65f970d2fed5549e1c56974db55d83"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/manifest.json",
+      "bytes": 3587,
+      "sha256": "5aba12df0c161ad27bb25117fa51d7ff0d7456779b275457506a0ca82e938174"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/overview.png",
+      "bytes": 3386379,
+      "sha256": "18c54152833d934e286e4127aedde80983c8f2b0694340a07bef8ac94fff09a0"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/paint-1-1.png",
+      "bytes": 19854,
+      "sha256": "472822286481a3fd10102fc398de5fab0f704796d30063e1430dd07980561ec8"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/paint-1-2.png",
+      "bytes": 18710,
+      "sha256": "67f984d019b766068ed7c4a6d42b46b3751c01dcf74d30086aa94c1444a9cb11"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/paint-1-3.png",
+      "bytes": 20789,
+      "sha256": "3e9a07b5c62af19bb861ba52e2cd879fe38a015c8acabd4798cc60a0bd023502"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/paint-2-1.png",
+      "bytes": 29987,
+      "sha256": "c171991fae65674da699ee6b6eb1b02f6b2e5bf4dde82ddc47f54e37809e5ef1"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/paint-2-2.png",
+      "bytes": 30134,
+      "sha256": "c66ef6ca936275be8d14dced641e953c0b491f3305288e3e67bc308ae68abb9b"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/paint-2-3.png",
+      "bytes": 29946,
+      "sha256": "fad24c95b93120ae77b7ef6308ebc7df7076230ee5674c75bcbf79a42b2fbe39"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/plate-1.png",
+      "bytes": 404185,
+      "sha256": "56f05299795d203587d2db7868ca9d7d6bb41e7370041bb5dc4833393a754de0"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/plate-2.png",
+      "bytes": 1825478,
+      "sha256": "487a2ce12d5b3d39c35b47c7c1c0c82467d04438d236ff994c713dc2be9705d6"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/printed.png",
+      "bytes": 4335748,
+      "sha256": "8be641cda6cc76d9b2a873e3c01b58776a5c4a6dbe6d00f482e9f3e725c4cd9f"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/proof.png",
+      "bytes": 1325833,
+      "sha256": "6514e9357c271c54683575ca3d3ad4a3e699923f262076ec3388bea4d4b23797"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/thumbnail.png",
+      "bytes": 307943,
+      "sha256": "79c1df6bb2ceaf0619ea2d34e6c9a3fbdfc705548892763e2382aa064dc30bce"
+    },
+    {
+      "path": "assets/artworks/lotus-and-carp/trace.png",
+      "bytes": 3094914,
+      "sha256": "76642f9a06e31b6edc688b79cb915caa0051783768bc6200bacc3162a5bd1659"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/art.json",
+      "bytes": 1451,
+      "sha256": "63d03f86a2bbf2cb6d360c26d02558543093f40def956183b1763676c2a5ade8"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/carve.png",
+      "bytes": 1587124,
+      "sha256": "dde83225a58a4fb860d5076fd9c862f6e5df9e1ab59b12b1ec12914e69ec0f00"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/layer-check.json",
+      "bytes": 3123,
+      "sha256": "91701921d7b62aeefc9086ca5f5e59f509d1d11827e84f929ebb736307e268ba"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/line.png",
+      "bytes": 2975852,
+      "sha256": "d96698593115e69a7c84af10f97448ae6249721c09acb39bd3eb1469371c077f"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/manifest.json",
+      "bytes": 3530,
+      "sha256": "f101b2297695a7d70cc2613cca8b0abfef00730315d94c544553dc4205742cd1"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/overview.png",
+      "bytes": 3426678,
+      "sha256": "ef8f823a2b2db2941461271d26aa220750b001ee15b2882f4dfe9404681881e5"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/paint-1-1.png",
+      "bytes": 34626,
+      "sha256": "a86922fbe4009ec2351f8f4984f5097dac8ca4deff68f2bf8847faf653a7fd00"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/paint-1-2.png",
+      "bytes": 35089,
+      "sha256": "0315cc1f4e2f5824697a3391c60fcc31e0bc3328b45c3003a2dc9509c18b6334"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/paint-1-3.png",
+      "bytes": 35117,
+      "sha256": "5562e51ac93b7a3abc36cae012f07b8f1f20b615c5be6bbad4813160457b830d"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/paint-2-1.png",
+      "bytes": 27410,
+      "sha256": "526362621960b011820b6a00fe5cf65240b827f389e1bdf770697cac43ebaa42"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/paint-2-2.png",
+      "bytes": 27605,
+      "sha256": "eb6eb72809cad2e0c27102bcb825a50eaa7fba57001faf43f9c0c05b4fb0a58a"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/paint-2-3.png",
+      "bytes": 27921,
+      "sha256": "d40c86cda619b8efb3a31e535023dc455a6bea3021df0bdfb7a0179b72746d75"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/plate-1.png",
+      "bytes": 474593,
+      "sha256": "4cac0b08c685f06e722e7c94c7fa09d3e1210d2ab066540ce834430ef37b5b64"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/plate-2.png",
+      "bytes": 1893255,
+      "sha256": "543839081a4abd40e536bb6a91a655dcb219603ad7200959490ab2c404c63b0d"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/printed.png",
+      "bytes": 4281016,
+      "sha256": "0d9a2ce04472b00d9afdd29600851a7371c8c1d0bda0bf66715cfe984bd1e3f7"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/proof.png",
+      "bytes": 1461528,
+      "sha256": "4f356bbf704db9b82de22f67ceb79476a2a351362c1313d76bf424434de6107f"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/thumbnail.png",
+      "bytes": 304633,
+      "sha256": "886f4841c8cceb1cb8191c453e15ca0b419abd14a6ea043c0534f0f645501125"
+    },
+    {
+      "path": "assets/artworks/peony-and-bird/trace.png",
+      "bytes": 2985599,
+      "sha256": "542cce36f1ac32457e94ef91b19824c450d317e41df9caeb9b6a8e62a4fd2bb1"
+    },
+    {
+      "path": "assets/artworks/spring-children/art.json",
+      "bytes": 1480,
+      "sha256": "a9814ba85ec0386be90b2b34aa6152c4a1be04a38a5567e6226fd32c0d0f8324"
+    },
+    {
+      "path": "assets/artworks/spring-children/carve.png",
+      "bytes": 1544579,
+      "sha256": "48c2f433a2ad45d6b8188eeb59bbc5fa7bcbee25dc45f70a3b47091cb5882775"
+    },
+    {
+      "path": "assets/artworks/spring-children/layer-check.json",
+      "bytes": 3130,
+      "sha256": "c3ee048354d2ac483d4c677a3a33736d3da8bd0e91f413f643d88beabae4f03b"
+    },
+    {
+      "path": "assets/artworks/spring-children/line.png",
+      "bytes": 2900546,
+      "sha256": "123414277012a4457cbb05627620a486fd0fffc99c0c715a8569280a854d8cf3"
+    },
+    {
+      "path": "assets/artworks/spring-children/manifest.json",
+      "bytes": 3542,
+      "sha256": "c4adc846b226827705db4234018a2c3cc2b2b5d54b80d8e60b80924a02f091ca"
+    },
+    {
+      "path": "assets/artworks/spring-children/overview.png",
+      "bytes": 3171449,
+      "sha256": "fca93b347a4cb358eec8f644355bc6215ec709786b44b1d7d716d64537cb8bff"
+    },
+    {
+      "path": "assets/artworks/spring-children/paint-1-1.png",
+      "bytes": 80970,
+      "sha256": "aa6f922f02024d37c6a91a4fbc50fa61797466baf371ff0443bb8522e79a55c5"
+    },
+    {
+      "path": "assets/artworks/spring-children/paint-1-2.png",
+      "bytes": 79417,
+      "sha256": "f5c1ee623a6c07f92babdac6583004008def1ea334f0afd7797983849cefeaf8"
+    },
+    {
+      "path": "assets/artworks/spring-children/paint-1-3.png",
+      "bytes": 79913,
+      "sha256": "53195120d62fb28db22d16426dce4ad4768bf2af544685e0961a182f9cc3212e"
+    },
+    {
+      "path": "assets/artworks/spring-children/paint-2-1.png",
+      "bytes": 23795,
+      "sha256": "78d79464febb7c47dd3f9eec2df9637713640b31ff1485cff8f23e19b2c2e4fd"
+    },
+    {
+      "path": "assets/artworks/spring-children/paint-2-2.png",
+      "bytes": 24164,
+      "sha256": "f7fde69cd884c434ffa17765a289eb6ac0054ba6706b5459ef59c5521dd5f481"
+    },
+    {
+      "path": "assets/artworks/spring-children/paint-2-3.png",
+      "bytes": 23383,
+      "sha256": "6ae8d26fadde3bd9642f2227ffcc050413a2873529ef6682d58aee5be03503cb"
+    },
+    {
+      "path": "assets/artworks/spring-children/plate-1.png",
+      "bytes": 168034,
+      "sha256": "5c9cbdc39277bf618edf872308d3ca0a3a5366f759f1bacad587366a4777846b"
+    },
+    {
+      "path": "assets/artworks/spring-children/plate-2.png",
+      "bytes": 1970727,
+      "sha256": "60e510f59fea4eaf112e95bbf5f8b3b3dd990cf721451ae2bd222d8f18b04a66"
+    },
+    {
+      "path": "assets/artworks/spring-children/printed.png",
+      "bytes": 3978682,
+      "sha256": "c7c21af9f5ed017d0ef8c7eab7f0b209582c953784a31bad3bf2be38903ddb58"
+    },
+    {
+      "path": "assets/artworks/spring-children/proof.png",
+      "bytes": 1442615,
+      "sha256": "3be531a1119585ebddcb3d60dabca1f5f1c8e06fae88239a28f1d32a86afcd03"
+    },
+    {
+      "path": "assets/artworks/spring-children/thumbnail.png",
+      "bytes": 285269,
+      "sha256": "3668f12720b886c60749e9a098d2d2a47907adaf20d1a9d208051ad5f3d6d987"
+    },
+    {
+      "path": "assets/artworks/spring-children/trace.png",
+      "bytes": 2912055,
+      "sha256": "f2c36d18b1a46b0296794ab339a2506155d2c0ef89581e0812bb813e84305eb5"
+    },
+    {
+      "path": "assets/seal.svg",
+      "bytes": 385,
+      "sha256": "e2fd7e2d8f65fe966dbb919782ff2dbc725b1f40627b962cc1af3f9a93a57cde"
+    },
+    {
+      "path": "assets/theme/clasp.svg",
+      "bytes": 491,
+      "sha256": "f42e933815d48d7fe874bb6fe0b48b2cad1837101181f97e1e9fa12098a164f2"
+    },
+    {
+      "path": "assets/theme/mat-bl.svg",
+      "bytes": 376,
+      "sha256": "1453c6a1a1725091b0299f0f01f7876cb1fedce2d1994b82be0b90e735089fae"
+    },
+    {
+      "path": "assets/theme/mat-br.svg",
+      "bytes": 447,
+      "sha256": "11e96a42fc28d305ff908192df4cfc7c7bb237059788b0b7dd908e7d46c23431"
+    },
+    {
+      "path": "assets/theme/mat-tl.svg",
+      "bytes": 416,
+      "sha256": "9a9b6008b309341835d4a16e07c90f30d4aa828b23efa30854db045b68087764"
+    },
+    {
+      "path": "assets/theme/mat-tr.svg",
+      "bytes": 376,
+      "sha256": "b015c8f6df16c28648b0e4fa67561a724fce1651b31a4a376914c208e28648d3"
+    },
+    {
+      "path": "assets/theme/paper-age.png",
+      "bytes": 524159,
+      "sha256": "3bd5d873762ea04969b546011cb7c5af9aeaf2cca6b8318eb6b2da04bfa01863"
+    },
+    {
+      "path": "assets/theme/paper-crackle.png",
+      "bytes": 343059,
+      "sha256": "bce76dece48907f898c4838c2e4540c06f5f8f1988679444f64d2a5573028709"
+    },
+    {
+      "path": "assets/theme/paper-fiber.png",
+      "bytes": 177253,
+      "sha256": "b0fc7b0268068993d719bf6aefbd0a49f7a69d70690390f759bd6ecc508aaa99"
+    },
+    {
+      "path": "assets/theme/paper-grain-soft.png",
+      "bytes": 1833,
+      "sha256": "3e9b2a879d4a707285db15ec1994aa27226ab42462e5c2943515725f6336af3b"
+    },
+    {
+      "path": "assets/theme/tick-bl.svg",
+      "bytes": 937,
+      "sha256": "eb9c7ad1c5160e695055c55702e9640d24f82a65b7e4bea95e2c4548bd617448"
+    },
+    {
+      "path": "assets/theme/tick-br.svg",
+      "bytes": 1017,
+      "sha256": "968ddff59ee179b1fe65a419fcc8af56186861befc4d18fdc7203888c56dca52"
+    },
+    {
+      "path": "assets/theme/tick-tl.svg",
+      "bytes": 984,
+      "sha256": "b5e169fe36b8eebd02cdc92a64e3c0231f346cabe15372af4a91c60d7d7d1bfd"
+    },
+    {
+      "path": "assets/theme/tick-tr.svg",
+      "bytes": 946,
+      "sha256": "e061b4caa15af7d3a8f2fe59424d4218c4e24967b87b64f7ef3c15ba5e5d7781"
+    },
+    {
+      "path": "content/art.mjs",
+      "bytes": 128,
+      "sha256": "5062bcf2cf63d980b9bdd3f33414a41e388346975081eed86d912ab32b0fa47d"
+    },
+    {
+      "path": "content/catalog.mjs",
+      "bytes": 53785,
+      "sha256": "07979f8f1730a56cbce61507d314ff09a06bb5ca1801091f501e7e872a36e97a"
+    },
+    {
+      "path": "content/content.mjs",
+      "bytes": 76,
+      "sha256": "eacfaa24988c508a64636ea9f207bc31cec961fe71314b8bd87f27cfdfd69310"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2397,
+      "sha256": "0889ffe04befea93cb2059a55136ba313dcea195672590f9405985764a170456"
+    },
+    {
+      "path": "src/app/audio.mjs",
+      "bytes": 45784,
+      "sha256": "185944ba0be26d84278085d70ec15315987c57c9105c6131917b860e0245c0b3"
+    },
+    {
+      "path": "src/app/edition.mjs",
+      "bytes": 325,
+      "sha256": "4e55e9194833cd4a875cde4730893c49c9cc92eaaef98a40a5d99b2f6dd99520"
+    },
+    {
+      "path": "src/app/engine.mjs",
+      "bytes": 20133,
+      "sha256": "1a806a29b7ae1594a2ef333dd6f2f3d3171c84b79348bc078d81980fc1006181"
+    },
+    {
+      "path": "src/app/gallery.mjs",
+      "bytes": 4088,
+      "sha256": "62861c74caff87f392b91bbbd7e0e19bf9beb7e0547618e89038cb8ef3fd631b"
+    },
+    {
+      "path": "src/app/launcher.mjs",
+      "bytes": 515,
+      "sha256": "163913c65c32f82d9778d0911827f7652ea79be089b9bac8eae4133240262cd3"
+    },
+    {
+      "path": "src/app/main.mjs",
+      "bytes": 26048,
+      "sha256": "cd97dfdd4e92069ab8ea5db06fefdbb3998483906ea3cd2cf0eac1f2719780a9"
+    },
+    {
+      "path": "src/app/motion.mjs",
+      "bytes": 1568,
+      "sha256": "5d1c3b9bd92ce81dc35c8e0a5dc080fb20a13d491309dc0ad709bed82d21ab05"
+    },
+    {
+      "path": "src/app/resources.mjs",
+      "bytes": 1251,
+      "sha256": "0c91cfde76395977f700cb26e9b7a339288095a192b320cc3610ac1fe2374eed"
+    },
+    {
+      "path": "src/app/theme.mjs",
+      "bytes": 1967,
+      "sha256": "8b755c97e0806962c2d81ed7e06549ee90748ea499d3d99e130912be3eac2f1e"
+    },
+    {
+      "path": "src/features/painting/index.mjs",
+      "bytes": 7344,
+      "sha256": "c74f30233f0d37c4c451fea1f9e8ac20cfc1b51ee3a5e563df1a04385c329360"
+    },
+    {
+      "path": "src/features/painting/model.mjs",
+      "bytes": 5384,
+      "sha256": "0df3d30d7b703d21b56bb79f6f43a3f1a17083872689765504fa76e77cd62972"
+    },
+    {
+      "path": "src/features/preparation/index.mjs",
+      "bytes": 1185,
+      "sha256": "1d7ba803fb6df1316a89853d40302dabb40dfdead6bc70fb234b0eda5b23cb22"
+    },
+    {
+      "path": "src/features/printing/index.mjs",
+      "bytes": 5835,
+      "sha256": "500ad27f081fc82fb624646ba5aac1abbeb97bddc7b7a21c55911f9b0737cacf"
+    },
+    {
+      "path": "src/features/read/index.mjs",
+      "bytes": 3859,
+      "sha256": "558ca2dcb11afe9d07cfcb4aa1b1940b25b0155bac4bde536c4c8e87a39d1a4f"
+    },
+    {
+      "path": "src/features/result/export.mjs",
+      "bytes": 5178,
+      "sha256": "bf6f0e0996215aae4fd008130e15c1548f1e0b07033fbc90290ca743fcaed8f5"
+    },
+    {
+      "path": "src/features/result/index.mjs",
+      "bytes": 6709,
+      "sha256": "5e7a563ad917fd7e87f9c44228a0df0891506fea305bb817ebec9958a25b379e"
+    },
+    {
+      "path": "src/features/sources/index.mjs",
+      "bytes": 2053,
+      "sha256": "0fa68867f5559dca76377a5f823421de4b200cb1d438f0a0c211a471b4daf0ac"
+    },
+    {
+      "path": "src/shared/base.css",
+      "bytes": 14012,
+      "sha256": "f3264f58abf04ea67357a58514cd3720d34b28e7fe20f003bfd3237a9ef9457a"
+    },
+    {
+      "path": "src/shared/contracts.mjs",
+      "bytes": 6872,
+      "sha256": "e6d50bb8928d77c0a7f70dcb7443996bc614a497cdd2a8c37c1acde40e79ffeb"
+    },
+    {
+      "path": "src/shared/layout.css",
+      "bytes": 3712,
+      "sha256": "de250765de0951cfeba4683c6effdfd7272f129af74464bd18ba1fa92595e7e2"
+    },
+    {
+      "path": "src/shared/theme-parchment.css",
+      "bytes": 9118,
+      "sha256": "88944189545a3030cbde9a51e5b816facb02dfad6412f58d3a80cd6714868c59"
+    },
+    {
+      "path": "src/shared/theme-plain.css",
+      "bytes": 4735,
+      "sha256": "bc991efffd7a7f5216e2b944d51f63b8082f5bd7e3fe37a4a427bb7e12b3dde7"
+    },
+    {
+      "path": "src/shared/theme-switch.css",
+      "bytes": 4510,
+      "sha256": "67d11731084ab721fdc3e1ea692337f71c75bce41cd37025b319542f40eced80"
+    },
+    {
+      "path": "src/shared/ui.mjs",
+      "bytes": 400,
+      "sha256": "45cfe4cfa60358dbd6f407e8d4c2879a0104ca45881a975c1f43cda4c26ad96e"
+    },
+    {
+      "path": "src/shared/workbench.css",
+      "bytes": 9634,
+      "sha256": "b129bd7bfb77971b9d53ec1a4472d57be6caf179949552946158106d9a5f436c"
+    },
+    {
+      "path": "src/shared/workbench.mjs",
+      "bytes": 7947,
+      "sha256": "fd3894199cd3304d8bd7626aa371c988f5915e3ed21d631ee84ad9846757cf38"
+    }
+  ]
+}

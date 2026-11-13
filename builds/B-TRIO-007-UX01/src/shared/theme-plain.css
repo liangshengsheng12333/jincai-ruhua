@@ -1,0 +1,142 @@
+/* 配色二：素纸（原交付的米白纸面，按同一套做工重做）
+   原版不是"降级兜底"：纸面、画框、页边细框、四角角花都按古纸那套工艺重做，
+   只是换回原来的米白 / 青灰 / 朱红。结构尺寸在 layout.css，两套完全一致。 */
+
+:root {
+  --paper: #f7f5ee;
+  --ink: #262c26;
+  --muted: #565e54;
+  --accent: #a23927;
+  --line: #cbcbbf;
+  --leaf: #316354;
+  --light-paper: #fffdf6;
+  --switch-invert: #f7f5ee;
+  --age-opacity: .4;
+  --reading-surface: rgb(255 253 246 / 90%);
+  --paper-texture: url("/assets/theme/paper-crackle.png");
+
+  --frame-color: rgb(96 112 100 / 76%);
+  --frame-color-soft: rgb(172 146 102 / 30%);
+  --mat-ink: rgb(108 124 110 / 80%);
+  --mat-hairline: rgb(198 170 118 / 64%);
+
+  --plain-base: #f6f4ec;
+  color-scheme: light;
+}
+
+/* ---------- 纸面：米白细纹纸 ---------- */
+body {
+  min-height: 100svh;
+  background-color: var(--plain-base);
+  background-image:
+    url("/assets/theme/paper-grain-soft.png"),
+    radial-gradient(118% 94% at 40% 16%, #fdfcf7 0%, #f8f6ef 34%, #f2f0e6 66%, #e9e7db 100%);
+  background-size: 512px 512px, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-position: center, center;
+  background-blend-mode: normal, normal;
+}
+
+/* 极淡的陈化与暖光，跟古纸一套气质，只是轻得多 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(30vw 24vh at 18% 14%, rgb(184 158 106 / 5%) 0%, transparent 68%),
+    radial-gradient(28vw 22vh at 82% 70%, rgb(184 158 106 / 5%) 0%, transparent 68%),
+    radial-gradient(26vw 20vh at 46% 92%, rgb(170 176 160 / 6%) 0%, transparent 66%),
+    radial-gradient(120% 96% at 50% 50%, transparent 82%, rgb(90 92 78 / 5%) 100%);
+}
+
+#app { position: relative; z-index: 1; padding-bottom: 26px; }
+
+/* ---------- 页头 / 页脚 ---------- */
+.topbar .mast { border-bottom: 1.5px solid rgb(96 112 100 / 26%); }
+.wordmark { letter-spacing: .14em; }
+.source-button { color: var(--muted); }
+.source-button:hover { color: var(--accent); }
+.app-footer {
+  border-top: 1px solid rgb(96 112 100 / 22%);
+  color: #3d4440;
+}
+
+/* ---------- 画框：米白衬底 + 同款角标与内阴影 ---------- */
+.gallery-mount {
+  background-color: #dedfd3;
+  background-image: radial-gradient(125% 105% at 50% 12%, #efe9d9 0%, #e7e0cf 48%, #dcd3bf 100%);
+  border: 1px solid #d6ccb6;
+  box-shadow:
+    0 20px 36px -22px rgb(70 58 38 / 22%),
+    0 2px 6px rgb(70 58 38 / 8%),
+    inset 0 0 0 1px rgb(255 252 244 / 66%),
+    inset 0 2px 12px rgb(96 82 56 / 8%);
+}
+.read-figure,
+.preparation-image {
+  background-color: #e7e0cf;
+  background-image: radial-gradient(125% 105% at 50% 12%, #efe9d9 0%, #e7e0cf 48%, #dcd3bf 100%);
+  border: 1px solid #c2c6b8;
+  box-shadow:
+    0 14px 28px -18px rgb(56 66 56 / 24%),
+    inset 0 0 0 1px rgb(255 255 250 / 56%);
+}
+
+/* ---------- 缩略图与选择 ---------- */
+.gallery-thumbnail {
+  background: linear-gradient(150deg, #efeee5, #e7e6da 70%, #dfded1);
+  outline: 1px solid rgb(150 158 142 / 34%);
+  outline-offset: -1px;
+}
+.gallery-choice:has(input:checked) {
+  border-color: var(--accent);
+  background: rgb(250 249 243 / 68%);
+  box-shadow: 0 0 0 1px rgb(162 57 39 / 18%);
+}
+.gallery-choice:not(:has(input:checked)) .gallery-thumbnail { filter: brightness(.98) saturate(.96); }
+.gallery-choice:hover .gallery-thumbnail { outline-color: rgb(120 132 118 / 58%); }
+.gallery h2 { letter-spacing: .05em; }
+
+/* ---------- 控件 ---------- */
+button, select {
+  background: rgb(255 253 246 / 86%);
+  border-color: rgb(150 158 142 / 46%);
+  color: var(--ink);
+}
+button:not(:disabled):hover { border-color: var(--accent); }
+.primary, .wb-primary {
+  background: #a23927;
+  border: 1px solid rgb(214 186 156 / 46%);
+  color: #fff9ea;
+  box-shadow: inset 0 0 0 1px rgb(255 236 214 / 14%);
+}
+.primary:not(:disabled):hover, .wb-primary:not(:disabled):hover {
+  background: #8c2f1f;
+  color: #fff9ea;
+}
+button:focus-visible, select:focus-visible, a:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #286557;
+  outline-offset: 4px;
+}
+
+/* ---------- 提示、弹层 ---------- */
+#notice:not(:empty), #feedback:not(:empty) {
+  border-left: 3px solid #8d9a8e;
+  background: rgb(244 244 234 / 82%);
+}
+dialog {
+  background: #fbfaf4;
+  border-color: rgb(150 158 142 / 44%);
+  box-shadow: 0 30px 60px -28px rgb(40 46 40 / 34%);
+}
+.notes h3 { color: #4d6a54; }
+.notes article, .asset-ledger { border-color: rgb(150 158 142 / 30%); }
+
+@media (max-width: 800px) {
+  body { background-size: 384px 384px, cover; background-attachment: scroll, scroll; }
+}
+
+.gallery-intro { max-width: 100%; }

@@ -1,0 +1,245 @@
+/* 配色一：古纸（暖褐旧纸 + 描金）
+   只负责颜色与材质；画框尺寸、页边细框、四角角花在 layout.css。 */
+
+:root {
+  --paper: #d5b57f;
+  --ink: #2a1e11;
+  --muted: #33250f;
+  --accent: #96361f;
+  --line: #a98a58;
+  --leaf: #64431a;
+  --light-paper: #ead9b6;
+  --gold: #7a5722;
+  --gold-soft: #a8834a;
+  --mat-deep: #3f2c18;
+  --mat: #5a4128;
+  --focus: #33230a;
+  --switch-invert: #efdcb4;
+  --age-opacity: .45;
+  --reading-surface: rgb(250 239 217 / 82%);
+  --paper-texture: url("/assets/theme/paper-age.png");
+
+  /* 描金与角花的颜色 */
+  --frame-color: rgb(98 66 22 / 84%);
+  --frame-color-soft: rgb(98 66 22 / 30%);
+  --mat-ink: rgb(150 112 60 / 62%);
+  --mat-hairline: rgb(120 92 50 / 34%);
+
+  /* 纸面明度阶梯：浅 → 深的六个节点，改动这里即可整体换档。
+     当前为选定档；取值已按纸纹 multiply 混合的回暗（约 ×0.925）补偿。 */
+  --paper-base: #e6c086;
+  --paper-1: #f2cc92;
+  --paper-2: #ecc68d;
+  --paper-3: #e6c086;
+  --paper-4: #dfb87e;
+  --paper-5: #d7ad71;
+  --paper-6: #cfa267;
+  color-scheme: light;
+}
+
+/* ---------- 纸面：暖金褐旧纸 + 纸纹 ---------- */
+body {
+  min-height: 100svh;
+  isolation: isolate;
+  background-color: var(--paper-base);
+  background-image:
+    linear-gradient(rgb(248 232 204 / 40%), rgb(248 232 204 / 40%)),
+    url("/assets/theme/paper-fiber.png"),
+    radial-gradient(120% 96% at 42% 20%, var(--paper-1) 0%, var(--paper-2) 26%, var(--paper-3) 52%, var(--paper-4) 74%, var(--paper-5) 90%, var(--paper-6) 100%);
+  background-size: cover, 512px 512px, cover;
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed;
+  background-position: center, center, center;
+  background-blend-mode: normal, multiply, normal;
+}
+
+/* 纸浆云斑 + 一点暖光 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .5;
+  background-image:
+    radial-gradient(30vw 24vh at 16% 26%, rgb(104 72 30 / 12%) 0%, transparent 66%),
+    radial-gradient(24vw 20vh at 69% 10%, rgb(104 72 30 / 10%) 0%, transparent 64%),
+    radial-gradient(34vw 26vh at 36% 92%, rgb(92 62 24 / 11%) 0%, transparent 68%),
+    radial-gradient(26vw 22vh at 88% 64%, rgb(92 62 24 / 11%) 0%, transparent 64%),
+    radial-gradient(24vw 20vh at 44% 18%, rgb(255 238 198 / 12%) 0%, transparent 64%),
+    radial-gradient(20vw 16vh at 76% 84%, rgb(255 238 198 / 9%) 0%, transparent 64%),
+    radial-gradient(18vw 16vh at 12% 4%, rgb(255 238 198 / 10%) 0%, transparent 64%);
+}
+
+#app { position: relative; z-index: 1; padding-bottom: 26px; }
+
+/* ---------- 页头 / 页脚 ---------- */
+.topbar .mast {
+  border-bottom: 1.5px solid rgb(110 78 30 / 40%);
+  position: relative;
+}
+.wordmark { letter-spacing: .14em; }
+.imprint {
+  background: linear-gradient(160deg, #a03c22, #832c17);
+  color: #f7ebcf;
+  box-shadow: inset 0 0 0 1px rgb(240 218 170 / 34%);
+}
+.source-button { color: var(--muted); }
+.source-button:hover { color: var(--accent); }
+.app-footer {
+  border-top: 1px solid rgb(110 78 30 / 34%);
+  color: var(--ink);
+}
+
+/* ---------- 画框：暖褐绢托 ---------- */
+.gallery-mount {
+  background-color: #c9ae83;
+  background-image:
+    url("/assets/theme/paper-fiber.png"),
+    radial-gradient(125% 105% at 50% 12%, #d3ba92 0%, #c9ae83 48%, #b89b6d 100%);
+  background-size: 220px 220px, cover;
+  background-repeat: repeat, no-repeat;
+  background-blend-mode: multiply, normal;
+  border: 1px solid #a88f66;
+  box-shadow:
+    0 20px 36px -22px rgb(60 44 20 / 34%),
+    0 2px 6px rgb(60 44 20 / 10%),
+    inset 0 0 0 1px rgb(255 250 236 / 42%),
+    inset 0 2px 12px rgb(110 86 50 / 12%);
+}
+.gallery-artwork figcaption { color: var(--muted); }
+.read-figure,
+.preparation-image {
+  background-color: var(--mat);
+  background-image: radial-gradient(125% 105% at 50% 12%, #d3ba92 0%, #c9ae83 48%, #b89b6d 100%);
+  border: 1px solid #a88f66;
+  box-shadow:
+    0 14px 28px -18px rgb(46 30 12 / 44%),
+    inset 0 0 0 1px rgb(200 166 108 / 24%);
+}
+
+/* ---------- 缩略图与选择 ---------- */
+.gallery-thumbnail {
+  background: linear-gradient(150deg, #dcc39a, #d3b98e 70%, #cbb083);
+  outline: 1px solid rgb(110 78 30 / 38%);
+  outline-offset: -1px;
+}
+.gallery-choice { border-radius: 1px; }
+.gallery-choice:has(input:checked) {
+  border-color: var(--accent);
+  background: rgb(240 226 194 / 62%);
+  box-shadow: 0 0 0 1px rgb(150 54 31 / 26%);
+}
+.gallery-choice:has(input:checked) .gallery-choice-name { color: var(--accent); }
+.gallery-choice:not(:has(input:checked)) .gallery-thumbnail { filter: brightness(.94) saturate(.94); }
+.gallery-choice:hover .gallery-thumbnail { outline-color: rgb(110 78 30 / 68%); }
+.gallery h2 { letter-spacing: .06em; }
+.gallery-intro { color: var(--muted); max-width: 100%; }
+.gallery-progress { color: var(--muted); }
+
+/* ---------- 控件：哑光金线 + 朱砂压印主按钮 ---------- */
+button, select {
+  background: rgb(238 222 188 / 72%);
+  border-color: rgb(110 78 30 / 46%);
+  color: var(--ink);
+}
+button:not(:disabled):hover { border-color: var(--accent); }
+.primary, .wb-primary {
+  background: linear-gradient(168deg, #a13c22, #86301a);
+  border: 1px solid rgb(196 158 94 / 62%);
+  color: #fbf1d8;
+  box-shadow: inset 0 0 0 1px rgb(255 238 198 / 16%), 0 1px 2px rgb(60 34 10 / 24%);
+}
+.primary:not(:disabled):hover, .wb-primary:not(:disabled):hover {
+  background: linear-gradient(168deg, #8f331c, #73260f);
+  color: #fff6e2;
+}
+.quiet { color: var(--muted); }
+.quiet:not(:disabled):hover { color: var(--accent); border-color: rgb(110 78 30 / 40%); }
+button:focus-visible, select:focus-visible, a:focus-visible, summary:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+button:disabled, select:disabled {
+  opacity: 1;
+  background: rgb(222 199 158 / 34%);
+  border-color: rgb(110 78 30 / 24%);
+  color: rgb(58 42 18 / 82%);
+}
+a { color: var(--leaf); }
+
+/* ---------- 提示、弹层、来源面板 ---------- */
+.session-bar { border-bottom: 1px solid rgb(110 78 30 / 30%); }
+.session-bar select { background: rgb(238 222 188 / 56%); }
+#notice:not(:empty), #feedback:not(:empty) {
+  border-left: 3px solid var(--gold);
+  background: rgb(240 226 194 / 76%);
+}
+dialog {
+  background: #dfcaa4;
+  border-color: rgb(110 78 30 / 46%);
+  box-shadow: 0 30px 60px -28px rgb(40 26 10 / 60%);
+}
+dialog::backdrop { background: rgb(34 22 8 / 56%); }
+.dialog-head { border-bottom-color: rgb(110 78 30 / 30%); }
+.notes h3 { color: #6a4715; }
+.notes article, .asset-ledger { border-color: rgb(110 78 30 / 28%); }
+.wb .wb-quiet { color: var(--accent); }
+.wb .wb-btn:disabled {
+  color: rgb(58 42 18 / 82%);
+  background: rgb(222 199 158 / 34%);
+  border-color: rgb(110 78 30 / 24%);
+}
+
+/* ---------- 工作台（读画／准备／套印／彩绘／结果）配套 ---------- */
+.wb {
+  --wb-charcoal: #2a1e11;
+  --wb-line: #a8895c;
+  --wb-color: #96361f;
+  --wb-fern: #6a4715;
+  --wb-muted: #33250f;
+  --wb-paper: #f8f1e0;
+}
+.wb .wb-mat {
+  background-color: var(--mat);
+  background-image: radial-gradient(125% 105% at 50% 12%, #d3ba92 0%, #c9ae83 48%, #b89b6d 100%);
+  border: 1px solid #a88f66;
+  box-shadow:
+    0 16px 32px -18px rgb(46 30 12 / 44%),
+    inset 0 0 0 1px rgb(200 166 108 / 26%);
+}
+.wb .wb-sheet {
+  box-shadow: 0 2px 8px rgb(40 26 10 / 34%), 0 0 0 1px rgb(200 166 108 / 28%);
+}
+.wb .wb-region-ring { border-color: #6a4715; box-shadow: 0 0 0 2px #fdf4de, inset 0 0 0 1px #fdf4de; }
+
+/* ---------- 读画标记与工作台局部 ---------- */
+.read-marker { background: rgb(110 78 30 / 22%); box-shadow: 0 0 0 1px var(--gold); }
+.read-marker::after { background: var(--gold); }
+.read-marker[data-active="true"] { background: rgb(150 54 31 / 34%); box-shadow: 0 0 0 2px var(--accent); }
+.read-hotspot[aria-pressed="true"] {
+  background: rgb(240 226 194 / 78%);
+  border-color: var(--gold);
+  color: #6a4715;
+}
+.wb .wb-quiz { border-top-color: rgb(110 78 30 / 30%); }
+.wb .wb-proof { border-inline-start-color: var(--gold); }
+.wb .wb-regions { border-top-color: rgb(110 78 30 / 30%); }
+.wb .wb-zone { border-bottom-color: rgb(110 78 30 / 30%); }
+.wb .wb-zone[data-active="true"] .wb-region-state { color: #6a4715; }
+.wb .wb-version[aria-pressed="true"] { background: #6a4715; border-color: #6a4715; color: #f8eed4; }
+.wb .wb-answer[aria-pressed="true"] { background: rgb(238 218 176 / 88%); color: #55390f; border-color: var(--gold); }
+
+/* ---------- 窄屏 ---------- */
+@media (max-width: 800px) {
+  body { background-size: cover, 384px 384px, cover; background-attachment: scroll, scroll, scroll; }
+  body::before {
+    background-image:
+      radial-gradient(70vw 46vh at 14% 8%, rgb(255 238 198 / 12%) 0%, transparent 62%),
+      radial-gradient(80vw 50vh at 70% 22%, rgb(255 238 198 / 9%) 0%, transparent 66%),
+      radial-gradient(70vw 40vh at 20% 86%, rgb(92 62 24 / 10%) 0%, transparent 66%),
+      radial-gradient(60vw 50vh at 96% 70%, rgb(92 62 24 / 10%) 0%, transparent 66%),
+      radial-gradient(140% 116% at 50% 50%, transparent 84%, rgb(58 38 12 / 6%) 100%);
+  }
+  .gallery h2 { letter-spacing: .04em; }
+}

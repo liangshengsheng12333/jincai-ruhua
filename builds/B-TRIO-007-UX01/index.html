@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#d9b57e">
+  <meta name="description" content="津彩入画：选择一幅年画，读画、印线、套色，再为画面添上细节。">
+  <title>津彩入画 · 年画工作台</title>
+  <link rel="icon" href="/assets/seal.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/shared/base.css">
+  <link rel="stylesheet" href="/src/shared/workbench.css">
+  <link rel="stylesheet" href="/src/shared/layout.css">
+  <link rel="stylesheet" id="theme-plain" href="/src/shared/theme-plain.css">
+  <link rel="stylesheet" id="theme-antique" href="/src/shared/theme-parchment.css">
+  <link rel="stylesheet" href="/src/shared/theme-switch.css">
+  <script>
+    (function () {
+      var t = 'antique';
+      try { var s = localStorage.getItem('jincai:theme'); if (s === 'plain' || s === 'antique') t = s; } catch (e) {}
+      var a = document.getElementById('theme-antique'), p = document.getElementById('theme-plain');
+      if (a) a.disabled = (t !== 'antique');
+      if (p) p.disabled = (t !== 'plain');
+      document.documentElement.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute('content', t === 'antique' ? '#d9b57e' : '#f7f5ee');
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"><main class="boot"><h1>津彩入画</h1><p role="status">正在打开工作台…</p><p>如果画面长时间未出现，请检查本机服务，再重新载入。</p><a href="./">重新载入</a></main></div>
+  <script type="module">
+    import('./src/app/main.mjs').catch(() => {
+      document.querySelector('#app').textContent = '';
+      const main = document.createElement('main');
+      main.className = 'boot';
+      const title = document.createElement('h1');
+      title.textContent = '工作台未能打开';
+      const text = document.createElement('p');
+      text.textContent = '请确认已按启动说明运行本机服务，且解压目录中的文件完整。';
+      const reload = document.createElement('button');
+      reload.textContent = '重新载入';
+      reload.onclick = () => location.reload();
+      main.append(title, text, reload);
+      document.querySelector('#app').append(main);
+    });
+  </script>
+</body>
+</html>

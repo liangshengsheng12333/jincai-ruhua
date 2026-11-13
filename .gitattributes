@@ -1,0 +1,3 @@
+# Preserve exact build bytes for manifest verification.
+/builds/** -text
+*.command text eol=lf

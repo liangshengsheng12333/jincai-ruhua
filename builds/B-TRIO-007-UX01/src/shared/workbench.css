@@ -1,0 +1,167 @@
+.wb {
+  --wb-charcoal: #292921;
+  --wb-line: #c7bcaa;
+  --wb-color: #973729;
+  --wb-fern: #316354;
+  --wb-muted: #5c594f;
+  --wb-paper: #f7f5ee;
+  --wb-song: "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+  display: grid;
+  grid-template-columns: minmax(0,1.55fr) minmax(260px, .84fr);
+  column-gap: clamp(28px, 5vw, 68px);
+  row-gap: 32px;
+  align-items: start;
+  color: var(--wb-charcoal);
+  margin: clamp(18px, 2.4vw, 34px) auto 24px;
+  max-width: 1200px;
+  width: 100%;
+}
+.wb *, .wb *::before, .wb *::after { box-sizing: border-box; }
+.wb .wb-figure { width: 100%; margin: 0; }
+.wb .wb-mat {
+  border: 1px solid #c7c9bb;
+  background: #dedfd3;
+  padding: clamp(12px,1.9vw,26px);
+  position: relative;
+}
+.wb .wb-sheet {
+  display: block;
+  position: relative;
+  width: min(100%, calc(64svh * var(--art-ratio, 1.25)));
+  margin-inline: auto;
+  isolation: isolate;
+  background: var(--wb-paper);
+  overflow: hidden;
+  box-shadow: 0 2px 6px #49381821, 0 0 0 1px #49381820;
+}
+.wb .wb-images,
+.wb .wb-images img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.wb .wb-images img { display: block; user-select: none; pointer-events: none; }
+.wb .wb-ink-guide { opacity: .16; }
+.wb .wb-images img[data-current] { opacity: .72; }
+.wb .wb-images img.wb-proofed { opacity: 1; }
+.wb .wb-caption {
+  display: flex; align-items: baseline; justify-content: space-between; gap: .8rem;
+  margin: 12px 0 0; padding: 0; color: var(--wb-muted); font-size: .94rem;
+}
+.wb .wb-art-title { font: 600 1rem/1.5 var(--wb-song); color: var(--wb-charcoal); }
+.wb .wb-controls { min-width: 0; padding:16px; background:var(--reading-surface,var(--light-paper)); }
+.wb .wb-title {
+  margin: 0 0 .75rem; color: var(--wb-charcoal); letter-spacing: .03em;
+  font: 650 clamp(1.85rem,3.2vw,3rem)/1.16 var(--wb-song);
+}
+.wb .wb-intro { margin: 0 0 1.35rem; color: var(--wb-muted); font-size: 1rem; line-height: 1.7; }
+.wb .wb-subhead { margin: 1.25rem 0 .35rem; font: 650 1.14rem/1.5 var(--wb-song); }
+.wb .wb-help { margin: .35rem 0 .75rem; color: var(--wb-muted); font-size: 1rem; line-height: 1.65; }
+/* 首次进入工序的就地提示：不遮挡画区、不写入存档，只在本会话内可关闭。 */
+.wb .wb-first-hint {
+  margin: .55rem 0 .9rem; padding: .65rem .85rem;
+  border-inline-start: 3px solid var(--wb-color); border-radius: 2px;
+  background: color-mix(in srgb, var(--wb-color) 9%, transparent);
+}
+.wb .wb-first-hint-text {
+  margin: 0; color: var(--wb-charcoal);
+  font-size: 1.02rem; font-weight: 520; line-height: 1.6; text-wrap: pretty;
+}
+.wb .wb-figure .wb-first-hint { margin: 0 0 .55rem; }
+.wb .wb-hint-dismiss {
+  margin-top: .5rem; min-height: 36px; padding: .2rem .7rem;
+  border-color: var(--wb-line); background: transparent; color: var(--wb-color); font-size: .92rem;
+}
+.wb .wb-hint-dismiss:hover:not(:disabled) { border-color: var(--wb-color); }
+.wb .wb-proof {
+  border-inline-start: 3px solid var(--wb-fern); padding: 2px 0 2px 10px; line-height: 1.55; margin: .9rem 0;
+}
+.wb .wb-proof:empty { display: none; }
+.wb .wb-offset { font-size: .935rem; color: var(--wb-muted); margin: .45rem 0; font-variant-numeric: tabular-nums; }
+.wb .wb-movable, .wb .wb-paintable { touch-action: none; user-select: none; -webkit-user-select: none; }
+.wb .wb-movable { cursor: grab; }
+.wb .wb-movable:active { cursor: grabbing; }
+.wb .wb-paintable { cursor: crosshair; }
+.wb .wb-btn {
+  appearance: none; border: 1px solid var(--wb-line); border-radius: 3px; margin: 0; min-height: 44px;
+  font: inherit; font-size: 1rem; font-weight: 520; line-height: 1.35; padding: .6rem 1rem;
+  color: var(--wb-charcoal); cursor: pointer; background: transparent;
+}
+.wb .wb-btn:hover:not(:disabled) { border-color: var(--wb-color); color: var(--wb-color); }
+.wb .wb-primary { border-color: var(--wb-color); background: var(--wb-color); color: #fff9eb; font-weight: 650; }
+.wb .wb-primary:hover:not(:disabled) { background: #79291f; color: #fff9eb; }
+.wb .wb-btn:disabled { color: #6f6a60; background: #e9e4d9; border-color: #d2cbbf; cursor: not-allowed; }
+.wb :is(.wb-btn,.wb-sheet):focus-visible { outline: 3px solid var(--wb-fern); outline-offset: 3px; }
+.wb .wb-actions, .wb .wb-editing, .wb .wb-arrows { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.wb .wb-actions > button { flex: 1 1 90px; }
+.wb .wb-arrows { display: inline-flex; margin-right: .4rem; }
+.wb .wb-direction { width: 44px; padding: 0; font-size: 1.15rem; }
+.wb .wb-quiet { border-color: transparent; color: var(--wb-color); padding: .5rem .3rem; text-decoration: underline; text-underline-offset: .23em; }
+.wb .wb-quiet:disabled { background: none; border-color: transparent; text-decoration: none; }
+.wb .wb-editing { margin-top: 1rem; gap: .9rem; }
+.wb .wb-regions { list-style: none; padding: 0; margin: 0 0 1rem; border-top: 1px solid var(--wb-line); }
+.wb .wb-zone { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--wb-line); }
+.wb .wb-region-name { font: 650 1.06rem/1.6 var(--wb-song); }
+.wb .wb-region-state { color: var(--wb-muted); font-size: .92rem; }
+.wb .wb-zone[data-active="true"] .wb-region-state { color: var(--wb-fern); font-weight: 650; }
+.wb .wb-region-ring {
+  position: absolute; transform: translate(-50%,-50%); pointer-events: none; border-radius: 50%;
+  border: 2px dashed #17493e; box-shadow: 0 0 0 2px #fff8e8, inset 0 0 0 1px #fff8e8;
+}
+.wb .wb-versions { display: flex; gap: 0; align-items: stretch; }
+.wb .wb-version { flex: 1 1 auto; padding: .55rem .35rem; border-radius: 0; }
+.wb .wb-version + .wb-version { margin-left: -1px; }
+.wb .wb-version[aria-pressed="true"] { background: var(--wb-fern); border-color: var(--wb-fern); color: #fffcf1; }
+.wb .wb-version[aria-pressed="true"]:hover { color: white; }
+.wb .wb-quiz { grid-column: 1/-1; border-top: 1px solid var(--wb-line); padding: 1.5rem 0 0; }
+.wb .wb-quiz-title { margin: 0 0 1rem; font: 650 1.55rem/1.4 var(--wb-song); }
+.wb .wb-question { padding: 0; margin: 0 0 1.35rem; border: 0; min-width: 0; }
+.wb .wb-question legend { margin: 0 0 .55rem; padding: 0; font-size: 1rem; font-weight: 650; }
+.wb .wb-options { display: flex; flex-wrap: wrap; gap: .5rem; }
+.wb .wb-answer[aria-pressed="true"] { background: #e3eee5; color: #254e42; border-color: var(--wb-fern); }
+.wb .wb-answer-note { margin: .6rem 0 0; color: var(--wb-fern); line-height: 1.6; }
+.wb .wb-hint-dismiss { min-height:44px; }
+.wb .wb-progressive { touch-action:auto; }
+.wb .wb-paint-overlay { position:absolute; pointer-events:none; }
+.wb .wb-paint-hit-layer { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.wb .wb-paint-hit { pointer-events:fill; touch-action:none; }
+.wb .wb-paint-progress { margin:.5rem 0; font-variant-numeric:tabular-nums; }
+.wb .wb-region-select { min-height:44px; min-width:44px; text-align:start; }
+.wb .wb-zone { flex-wrap:wrap; column-gap:8px; }
+.wb .wb-result-actions { display:grid; gap:10px; margin:16px 0; }
+.wb .wb-result-actions > .wb-actions { width:100%; }
+.wb .wb-result-actions .wb-primary { flex-basis:100%; }
+.wb .wb-export-status { font-size:16px; overflow-wrap:anywhere; }
+.wb .wb-export-status:empty { display:none; }
+.wb .wb-export-backup { margin:16px 0; }
+.wb .wb-export-backup summary,.wb .wb-quiz-summary { min-height:44px; padding:10px 0; cursor:pointer; }
+.wb .wb-export-preview { display:block; width:100%; max-width:480px; height:auto; margin-top:12px; }
+.wb .wb-export-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; font-size:16px; overflow-wrap:anywhere; }
+.wb .wb-export-links a { display:inline-flex; align-items:center; min-height:44px; }
+.wb .wb-quiz-summary { font:600 1.2rem/1.5 var(--wb-song); }
+.wb .wb-quiz-optional { margin-left:8px; font:400 1rem/1.5 var(--sans); color:var(--wb-muted); }
+.wb .wb-quiz-body { margin-top:16px; }
+.wb .wb-quiz { background:var(--reading-surface,var(--light-paper)); padding:16px; min-width:0; }
+/* 桌面彩绘栏压缩重复说明的留白，让当前画区的操作与完整画作同屏。 */
+@media (min-width: 1100px) {
+  .wb[data-feature="painting"] .wb-controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:8px; }
+  .wb[data-feature="painting"] .wb-controls > * { grid-column:1/-1; }
+  .wb[data-feature="painting"] .wb-title { margin-bottom:8px; }
+  .wb[data-feature="painting"] .wb-intro { margin-bottom:8px; }
+  .wb[data-feature="painting"] .wb-first-hint { display:flex; align-items:center; gap:8px; margin:0 0 8px; padding:8px; }
+  .wb[data-feature="painting"] .wb-first-hint-text { flex:1; line-height:1.5; }
+  .wb[data-feature="painting"] .wb-hint-dismiss { flex:none; margin:0; }
+  .wb[data-feature="painting"] .wb-subhead { margin:8px 0 4px; }
+  .wb[data-feature="painting"] .wb-paint-progress { margin:4px 0; }
+  .wb[data-feature="painting"] .wb-regions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-bottom:8px; }
+  .wb[data-feature="painting"] .wb-zone { padding:4px 0; }
+  .wb[data-feature="painting"] .wb-actions { grid-column:1; }
+  .wb[data-feature="painting"] .wb-controls > .wb-btn { grid-column:2; }
+  .wb[data-feature="painting"] .wb-editing { margin-top:8px; }
+  .wb[data-feature="painting"] #feedback { order:1; }
+}
+@media (max-width: 800px) {
+  .wb { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .wb .wb-controls { padding:14px; }
+  .wb .wb-title { font-size: 2rem; }
+  .wb .wb-intro { margin-bottom: .9rem; }
+  .wb .wb-subhead { margin-top: .8rem; }
+  .wb .wb-options { align-items: stretch; flex-direction: column; }
+  .wb .wb-answer { text-align: start; }
+}

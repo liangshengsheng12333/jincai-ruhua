@@ -1,0 +1,162 @@
+/* 页面配色与雅乐音频切换控件（两套主题共用）
+   这份样式不依赖任何一套主题，用 currentColor 跟着当前文字色走，
+   所以「暗金」和「原版」两套下都能看。 */
+
+.mast-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+}
+
+.theme-switch,
+.audio-switch {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: .78;
+  flex-shrink: 0;
+}
+.theme-switch:hover,
+.audio-switch:hover { opacity: 1; }
+
+.theme-switch__opt,
+.audio-switch__btn {
+  min-height: 44px;
+  min-width: 44px;
+  margin: 0;
+  padding: 1px 9px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: .06em;
+  cursor: pointer;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.theme-switch__opt + .theme-switch__opt { border-left: 1px solid currentColor; }
+.theme-switch__opt:hover,
+.audio-switch__btn:hover { background: rgb(0 0 0 / 7%); }
+.theme-switch__opt[aria-pressed="true"] { background: currentColor; cursor: default; }
+.theme-switch__opt[aria-pressed="true"] > span { color: var(--switch-invert, #f7f5ee); }
+.audio-switch__btn[aria-pressed="true"] { background: rgb(0 0 0 / 6%); }
+.theme-switch__opt:focus-visible,
+.audio-switch__btn:focus-visible,
+.audio-switch__slider:focus-visible { outline-offset: -2px; }
+
+/* 音量滑动调节滑块与数值显示 */
+.audio-switch__vol-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 8px 1px 7px;
+  border-left: 1px solid currentColor;
+}
+
+.audio-switch__slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 72px;
+  height: 44px;
+  background: transparent;
+  border-radius: 2px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: currentColor;
+  transition: opacity .15s ease;
+}
+.audio-switch__slider:focus-visible { outline:3px solid var(--leaf); outline-offset:-3px; }
+.audio-switch__slider::-webkit-slider-runnable-track { height:4px; background:currentColor; border-radius:2px; }
+.audio-switch__slider::-moz-range-track { height:4px; background:currentColor; border-radius:2px; }
+
+.audio-switch__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: var(--bg, #f7f5ee);
+  border: 2px solid currentColor;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
+  transition: transform .1s ease;
+}
+
+.audio-switch__slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.audio-switch__slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg, #f7f5ee);
+  border: 2px solid currentColor;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
+}
+
+.audio-switch__vol-txt {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  min-width: 27px;
+  opacity: .85;
+  user-select: none;
+  text-align: right;
+  line-height: 1;
+}
+
+@media (max-width: 520px) {
+  .mast-tools { gap: 6px; min-height: 38px; }
+  .theme-switch__opt,
+  .audio-switch__btn { padding: 1px 6px; font-size: 12px; }
+  .audio-switch__txt { display: none; }
+  .audio-switch__slider { width: 42px; }
+  .audio-switch__vol-txt { font-size: 10px; min-width: 23px; }
+  .source-button { font-size: 12px; padding-inline: 1px; }
+}
+
+@media (max-width: 380px) {
+  .mast-tools { gap: 4px; }
+  .theme-switch__opt { padding: 1px 4px; font-size: 11px; letter-spacing: 0; }
+  .audio-switch__btn { padding: 1px 4px; font-size: 11px; letter-spacing: 0; }
+  .audio-switch__txt { display: none; }
+  .audio-switch__slider { width: 34px; }
+  .audio-switch__vol-txt { display: none; }
+  .audio-switch__vol-box { padding-inline: 4px; }
+}
+
+@media (max-width: 320px) {
+  .mast-tools { gap: 3px; }
+  .audio-switch__slider { width: 28px; }
+  .audio-switch__vol-box { padding-inline: 3px; }
+}
+
+/* 页头控件较多时，窄屏禁止词内断行，最窄档换行并防止横向溢出 */
+.wordmark,
+.source-button,
+.audio-switch__btn,
+.audio-switch__vol-box,
+.theme-switch__opt > span { white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .topbar .mast {
+    flex-wrap: wrap;
+    row-gap: 6px;
+    padding-block: 6px;
+    min-height: 0;
+  }
+  .mast-tools { width: 100%; justify-content: flex-start; gap: 8px; }
+  .source-button,.theme-switch__opt,.audio-switch__btn { font-size:14px; }
+  .audio-switch__slider { width:56px; }
+}

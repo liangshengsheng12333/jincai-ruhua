@@ -1,0 +1,6 @@
+/builds/*/assets/
+*.exe
+*.pdf
+*.zip
+.env
+.env.*

@@ -1,0 +1,124 @@
+/* 两套配色共用的版面与工艺几何
+   画框尺寸、页边细框、四角角花、画框角标都放在这里，
+   颜色留给各自的配色文件（--frame-color / --mat-ink 等）。 */
+
+:root {
+  --mat-pad-x: clamp(26px, 3.2vw, 46px);
+  --mat-pad-top: clamp(22px, 2.4vw, 34px);
+  --mat-pad-bottom: clamp(18px, 2vw, 28px);
+  --frame-inset: 12px;
+  --frame-w: 1.5px;
+  --corner-size: 48px;
+  --mat-corner-size: 26px;
+}
+
+/* ---------- 画框：按画幅定尺寸，不再是「拉满栏宽再用衬边凑」 ---------- */
+.gallery-mount {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: 0 auto;
+  height: auto;
+  padding: var(--mat-pad-top) var(--mat-pad-x) var(--mat-pad-bottom);
+}
+.gallery-mount img {
+  display: block;
+  width: auto;
+  height: clamp(240px, 43svh, 500px);
+  max-width: 100%;
+  object-fit: contain;
+  box-shadow: 0 2px 10px rgb(40 26 10 / 30%);
+  outline: 1px solid var(--mat-hairline, rgb(226 196 140 / 26%));
+  outline-offset: 0;
+}
+
+/* ---------- 纸面陈化：不重复的一张图，四角各长各的 ---------- */
+#app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--paper-texture, url("/assets/theme/paper-age.png")) center / cover no-repeat;
+  opacity: var(--age-opacity, 1);
+}
+
+/* ---------- 页面细框：外框 + 外侧一条淡线 ---------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: var(--frame-inset);
+  z-index: 3;
+  pointer-events: none;
+  border: var(--frame-w) solid var(--frame-color, #6f4d20);
+  outline: 1px solid var(--frame-color-soft, rgb(98 66 22 / 30%));
+  outline-offset: 5px;
+}
+
+/* ---------- 四角角花：形状走蒙版，颜色随当前配色 ---------- */
+#app::after {
+  content: "";
+  position: fixed;
+  inset: var(--frame-inset);
+  z-index: 2;
+  pointer-events: none;
+  background-color: var(--frame-color, #6f4d20);
+  -webkit-mask-image:
+    url("/assets/theme/tick-tl.svg"), url("/assets/theme/tick-tr.svg"),
+    url("/assets/theme/tick-bl.svg"), url("/assets/theme/tick-br.svg");
+  mask-image:
+    url("/assets/theme/tick-tl.svg"), url("/assets/theme/tick-tr.svg"),
+    url("/assets/theme/tick-bl.svg"), url("/assets/theme/tick-br.svg");
+  -webkit-mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+  mask-position: 0 0, 100% 0, 0 100%, 100% 100%;
+  -webkit-mask-size: var(--corner-size) var(--corner-size);
+  mask-size: var(--corner-size) var(--corner-size);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+
+/* ---------- 页头中线的菱形扣：仍走蒙版 ---------- */
+.mast::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 40px;
+  height: 18px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background-color: var(--frame-color, #6f4d20);
+  -webkit-mask: url("/assets/theme/clasp.svg") center / 40px 18px no-repeat;
+  mask: url("/assets/theme/clasp.svg") center / 40px 18px no-repeat;
+}
+
+/* ---------- 窄屏：框线略收，角花缩小 ---------- */
+@media (max-width: 800px) {
+  #app::before { opacity: calc(var(--age-opacity, 1) * .8); }
+  :root {
+    --mat-pad-x: clamp(18px, 4.5vw, 26px);
+    --mat-pad-top: clamp(24px, 6vw, 34px);
+    --mat-pad-bottom: clamp(16px, 3.6vw, 22px);
+    --frame-inset: 7px;
+    --corner-size: 30px;
+    --mat-corner-size: 22px;
+  }
+  .gallery-mount { width: 100%; }
+  .gallery-mount img { width: 100%; height: auto; }
+}
+
+@media (max-width: 360px) {
+  :root {
+    --frame-inset: 5px;
+    --corner-size: 26px;
+    --mat-corner-size: 19px;
+  }
+}
+
+/* 中文段落尽量不出现末行孤字 */
+.gallery-intro { text-wrap: balance; }
+.gallery-progress,
+.wb .wb-intro,
+.wb .wb-help { text-wrap: pretty; }
